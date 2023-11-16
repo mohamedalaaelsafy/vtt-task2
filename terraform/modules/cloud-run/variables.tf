@@ -21,7 +21,7 @@ variable "memory" {
 variable "minScale" {
   type = string
 }
-  
+
 variable "maxScale" {
   type = string
 }
