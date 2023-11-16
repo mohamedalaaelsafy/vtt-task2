@@ -1,6 +1,5 @@
 */.terraform
 *.hcl
 *.tgz
-app/
 *.lock
 *.json
