@@ -31,6 +31,7 @@ jobs:
         
       - name: Docker Build and Push to DockerHub
         run: |
+            ls
             docker build -t us-central1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/dev/python-app:latest ./app
             docker push us-central1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/dev/python-app:latest
       - name: Deploy to Cloud Run
