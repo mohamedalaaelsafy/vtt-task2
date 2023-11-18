@@ -25,4 +25,17 @@ variable "maxScale" {
 variable "name" {
   type = string
 }
-  
+
+
+variable "alb_ip_enabled" {
+  type = bool
+}
+
+variable "alb_ip_name" {
+  type = string
+}
+
+variable "alb_name" {
+  type = string
+}
+

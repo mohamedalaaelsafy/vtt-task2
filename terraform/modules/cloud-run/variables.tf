@@ -25,4 +25,3 @@ variable "minScale" {
 variable "maxScale" {
   type = string
 }
-  

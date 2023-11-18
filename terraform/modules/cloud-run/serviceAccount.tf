@@ -4,7 +4,4 @@ module "cloud-run-sa" {
   project_id    = var.project_id
   names         = ["cloud-run-sa"]
   project_roles = []
-  # "${var.project_id}=>roles/artifactregistry.admin",
-  # "${var.project_id}=>roles/run.admin",
-  # "${var.project_id}=>roles/iam.serviceAccountUser"
 }

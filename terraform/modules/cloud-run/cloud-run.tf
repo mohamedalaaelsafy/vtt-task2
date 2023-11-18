@@ -5,7 +5,8 @@ resource "google_cloud_run_service" "python-app" {
   template {
     spec {
       containers {
-        image = "us-docker.pkg.dev/cloudrun/container/hello"
+        # image = "us-docker.pkg.dev/cloudrun/container/hello"
+        image = "us-central1-docker.pkg.dev/vodafone-technical-task/dev/python-app"
         ports {
           container_port = 80
           name           = "http1"
@@ -59,4 +60,14 @@ resource "google_cloud_run_service_iam_policy" "noauth-policy" {
 
   policy_data = data.google_iam_policy.noauth.policy_data
 }
+
+resource "google_compute_region_network_endpoint_group" "serverless_neg" {
+  name                  = "python-neg"
+  network_endpoint_type = "SERVERLESS"
+  region                = var.region
+  cloud_run {
+    service = google_cloud_run_service.python-app.name
+  }
+}
+
 
