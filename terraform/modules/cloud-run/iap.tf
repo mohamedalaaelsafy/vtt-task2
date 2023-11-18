@@ -17,6 +17,7 @@ resource "google_cloud_run_service_iam_policy" "policy" {
   project     = google_cloud_run_service.python-app.project
   service     = google_cloud_run_service.python-app.name
   policy_data = data.google_iam_policy.iap-auth.policy_data
+  depends_on = [ google_cloud_run_service.python-app ]
 }
 
 
