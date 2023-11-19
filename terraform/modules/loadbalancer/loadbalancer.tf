@@ -36,7 +36,7 @@ module "lb-http" {
       }
     }
   }
-  depends_on = [google_compute_global_address.global_alb_ip ]
+  depends_on = [google_compute_global_address.global_alb_ip, google_compute_managed_ssl_certificate.default ]
 }
 
 
